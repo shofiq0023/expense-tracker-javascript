@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+	--box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--custom-red-color: #ed553b;
+	--custom-green-color: #3caea3;
+	--money-green: #2ecc71;
+	--money-red: #c0392b;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #f7f7f7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+}
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+h1 {
+	letter-spacing: 1px;
+	margin: 0;
+}
+h3 {
+	border-bottom: 1px solid #bbb;
+	text-transform: capitalize;
+	padding-bottom: 10px;
+	margin: 40px 0 10px;
+}
+h4 {
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.income-expense-container {
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: var(--box-shadow);
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.income-expense-container > div {
+	flex: 1;
+	text-align: center;
+}
+
+.income-expense-container > div:first-of-type {
+	border-right: 1px solid #dedede;
+}
+.money {
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin: 5px 0;
+}
+.money.plus {
+	color: var(--money-green);
+}
+.money.minus {
+	color: var(--money-red);
+}
+.list {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 40px;
+}
+.list li {
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	margin: 10px 0;
+	text-transform: capitalize;
+	position: relative;
+}
+.list li.plus {
+	border-right: 5px solid var(--money-green);
+}
+.list li.minus {
+	border-right: 5px solid var(--money-red);
+}
+button {
+	cursor: pointer;
+}
+
+.delete-btn {
+	position: absolute;
+	border: 0;
+	background: var(--custom-red-color);
+	color: #fff;
+	font-size: 20px;
+	top: 50%;
+	left: 0;
+	transform: translate(-100%, -50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.list li:hover .delete-btn {
+	opacity: 1;
+}
+
+label {
+	display: inline-block;
+	margin: 10px 0;
+	text-transform: capitalize;
+}
+input {
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #dedede;
+	padding: 10px;
+}
+.submit-btn {
+	background-color: var(--custom-green-color);
+	border: 0;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0 30px;
+	font-size: 16px;
+	text-transform: capitalize;
+	border-radius: 5px;
+	color: #fff;
+	box-shadow: 0;
+	transition: box-shadow 0.3s ease;
+}
+.submit-btn:hover {
+	box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 576px) {
+	body {
+		justify-content: flex-start;
+	}
+}
